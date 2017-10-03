@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".DrawerActivity">
+    <LinearLayout
+        android:id="@+id/drawer_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:measureWithLargestChild="false"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+<!--
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/oil"
+            android:padding="10dp"
+            android:text="Material Design Navigation View"
+            android:textColor="#fff"
+            android:textSize="24sp"
+            android:layout_marginTop="175dp"
+            android:gravity="center_horizontal|center"/>
+-->
+
+    </LinearLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        android:background="#000080"
+        app:itemTextColor="?android:textColorPrimary"/>
+        <!--app:menu="@menu/drawer" />-->
+</android.support.v4.widget.DrawerLayout>

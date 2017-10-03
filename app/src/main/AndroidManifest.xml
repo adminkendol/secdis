@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:node="merge"
+    android:theme="@android:style/Theme.Translucent"
+    package="lampung.dispenda.cctv">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="lampung.dispenda.cctv.MainActivity"
+            android:noHistory="true"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- [START firebase_iid_service] -->
+        <service
+            android:name="lampung.dispenda.cctv.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <!--<service
+            android:name="lampung.dispenda.cctv.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>-->
+        <!-- [END firebase_iid_service] -->
+        <activity android:name="lampung.dispenda.cctv.Signin" android:theme="@style/AppTheme.Dark" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:name="lampung.dispenda.cctv.module.Dialog" android:theme="@style/AppTheme.notif" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:name="lampung.dispenda.cctv.SignupActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name="lampung.dispenda.cctv.respon" android:theme="@style/AppTheme.Dark"/>
+        <activity android:name="lampung.dispenda.cctv.dashboard" android:screenOrientation="portrait"/>
+        <activity android:name="lampung.dispenda.cctv.Dashboards" android:screenOrientation="portrait"/>
+        <activity android:name="lampung.dispenda.cctv.Barlay" android:screenOrientation="portrait" android:theme="@style/AppTheme.trang"/>
+        <activity android:name="lampung.dispenda.cctv.Show"/>
+        <activity android:name="lampung.dispenda.cctv.child.Child_menu" android:screenOrientation="portrait" android:theme="@style/AppTheme.prog"/>
+        <activity android:name="lampung.dispenda.cctv.child.ChildListActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.prog"/>
+        <activity android:name="lampung.dispenda.cctv.ListCctv" android:theme="@style/AppTheme.Dark" android:screenOrientation="portrait"/>
+        <activity android:name="lampung.dispenda.cctv.module.Setup_users" android:theme="@style/AppTheme.Dark" android:screenOrientation="portrait"/>
+        <activity android:name="lampung.dispenda.cctv.module.Setup_form_users" android:theme="@style/AppTheme" android:screenOrientation="portrait"/>
+        <activity android:name="lampung.dispenda.cctv.module.Setup_location" android:theme="@style/AppTheme.Dark" android:screenOrientation="portrait"/>
+        <activity android:name="lampung.dispenda.cctv.module.Arsip_cam" android:theme="@style/AppTheme.trang" android:screenOrientation="portrait"/>
+        <activity android:name="lampung.dispenda.cctv.module.Report" android:noHistory="true" android:theme="@style/AppTheme.prog"/>
+        <activity android:name="lampung.dispenda.cctv.DashboardForAndroidApp" android:theme="@style/AppTheme.Dark" android:screenOrientation="portrait"/>
+        <activity android:name="lampung.dispenda.cctv.chart.Bar" android:screenOrientation="portrait" android:theme="@style/AppTheme.Dark"/>
+
+    </application>
+
+</manifest>

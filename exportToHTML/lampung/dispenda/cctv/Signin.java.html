@@ -1,0 +1,262 @@
+<html>
+<head>
+<title>Signin.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,120,50); }
+.s1 { color: rgb(169,183,198); }
+.s2 { color: rgb(98,151,85); font-style: italic; }
+.s3 { color: rgb(106,135,89); }
+.s4 { color: rgb(128,128,128); }
+.s5 { color: rgb(104,151,187); }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Signin.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="ln">1    </span></a><span class="s0">package </span><span class="s1">lampung.dispenda.cctv</span><span class="s0">;</span><span class="s1"> 
+<a name="l2"><span class="ln">2    </span></a> 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">import </span><span class="s1">android.annotation.TargetApi</span><span class="s0">;</span><span class="s1"> 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">import </span><span class="s1">android.app.ProgressDialog</span><span class="s0">;</span><span class="s1"> 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">import </span><span class="s1">android.content.Context</span><span class="s0">;</span><span class="s1"> 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">import </span><span class="s1">android.content.DialogInterface</span><span class="s0">;</span><span class="s1"> 
+<a name="l7"><span class="ln">7    </span></a></span><span class="s0">import </span><span class="s1">android.content.Intent</span><span class="s0">;</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a></span><span class="s0">import </span><span class="s1">android.graphics.Color</span><span class="s0">;</span><span class="s1"> 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s0">import </span><span class="s1">android.os.AsyncTask</span><span class="s0">;</span><span class="s1"> 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s0">import </span><span class="s1">android.os.Build</span><span class="s0">;</span><span class="s1"> 
+<a name="l11"><span class="ln">11   </span></a></span><span class="s0">import </span><span class="s1">android.os.Bundle</span><span class="s0">;</span><span class="s1"> 
+<a name="l12"><span class="ln">12   </span></a></span><span class="s0">import </span><span class="s1">android.support.design.widget.Snackbar</span><span class="s0">;</span><span class="s1"> 
+<a name="l13"><span class="ln">13   </span></a></span><span class="s0">import </span><span class="s1">android.support.v7.app.AlertDialog</span><span class="s0">;</span><span class="s1"> 
+<a name="l14"><span class="ln">14   </span></a></span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity</span><span class="s0">;</span><span class="s1"> 
+<a name="l15"><span class="ln">15   </span></a></span><span class="s0">import </span><span class="s1">android.util.Log</span><span class="s0">;</span><span class="s1"> 
+<a name="l16"><span class="ln">16   </span></a></span><span class="s0">import </span><span class="s1">android.view.View</span><span class="s0">;</span><span class="s1"> 
+<a name="l17"><span class="ln">17   </span></a></span><span class="s0">import </span><span class="s1">android.widget.Button</span><span class="s0">;</span><span class="s1"> 
+<a name="l18"><span class="ln">18   </span></a></span><span class="s0">import </span><span class="s1">android.widget.EditText</span><span class="s0">;</span><span class="s1"> 
+<a name="l19"><span class="ln">19   </span></a></span><span class="s0">import </span><span class="s1">android.widget.ScrollView</span><span class="s0">;</span><span class="s1"> 
+<a name="l20"><span class="ln">20   </span></a></span><span class="s0">import </span><span class="s1">android.widget.Toast</span><span class="s0">;</span><span class="s1"> 
+<a name="l21"><span class="ln">21   </span></a> 
+<a name="l22"><span class="ln">22   </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.NameValuePair</span><span class="s0">;</span><span class="s1"> 
+<a name="l23"><span class="ln">23   </span></a></span><span class="s0">import </span><span class="s1">org.apache.http.message.BasicNameValuePair</span><span class="s0">;</span><span class="s1"> 
+<a name="l24"><span class="ln">24   </span></a></span><span class="s0">import </span><span class="s1">org.json.JSONArray</span><span class="s0">;</span><span class="s1"> 
+<a name="l25"><span class="ln">25   </span></a></span><span class="s0">import </span><span class="s1">org.json.JSONException</span><span class="s0">;</span><span class="s1"> 
+<a name="l26"><span class="ln">26   </span></a></span><span class="s0">import </span><span class="s1">org.json.JSONObject</span><span class="s0">;</span><span class="s1"> 
+<a name="l27"><span class="ln">27   </span></a> 
+<a name="l28"><span class="ln">28   </span></a></span><span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span><span class="s1"> 
+<a name="l29"><span class="ln">29   </span></a></span><span class="s0">import </span><span class="s1">java.util.List</span><span class="s0">;</span><span class="s1"> 
+<a name="l30"><span class="ln">30   </span></a> 
+<a name="l31"><span class="ln">31   </span></a></span><span class="s0">import </span><span class="s1">butterknife.Bind</span><span class="s0">;</span><span class="s1"> 
+<a name="l32"><span class="ln">32   </span></a></span><span class="s0">import </span><span class="s1">butterknife.ButterKnife</span><span class="s0">;</span><span class="s1"> 
+<a name="l33"><span class="ln">33   </span></a></span><span class="s0">import </span><span class="s1">lampung.dispenda.cctv.config.Basic</span><span class="s0">;</span><span class="s1"> 
+<a name="l34"><span class="ln">34   </span></a></span><span class="s0">import </span><span class="s1">lampung.dispenda.cctv.config.UtilLocation</span><span class="s0">;</span><span class="s1"> 
+<a name="l35"><span class="ln">35   </span></a> 
+<a name="l36"><span class="ln">36   </span></a></span><span class="s2">/** 
+<a name="l37"><span class="ln">37   </span></a> * Created by Chandra on 9/6/2016. 
+<a name="l38"><span class="ln">38   </span></a> */</span><span class="s1"> 
+<a name="l39"><span class="ln">39   </span></a></span><span class="s0">public class </span><span class="s1">Signin </span><span class="s0">extends </span><span class="s1">AppCompatActivity{ 
+<a name="l40"><span class="ln">40   </span></a> 
+<a name="l41"><span class="ln">41   </span></a>    @Bind(R.id.input_email) 
+<a name="l42"><span class="ln">42   </span></a>    EditText _emailText</span><span class="s0">;</span><span class="s1"> 
+<a name="l43"><span class="ln">43   </span></a>    @Bind(R.id.input_password) EditText _passwordText</span><span class="s0">;</span><span class="s1"> 
+<a name="l44"><span class="ln">44   </span></a>    @Bind(R.id.btn_login) Button _loginButton</span><span class="s0">;</span><span class="s1"> 
+<a name="l45"><span class="ln">45   </span></a> 
+<a name="l46"><span class="ln">46   </span></a>    </span><span class="s0">final </span><span class="s1">Basic config = </span><span class="s0">new </span><span class="s1">Basic()</span><span class="s0">;</span><span class="s1"> 
+<a name="l47"><span class="ln">47   </span></a>    Context mContext</span><span class="s0">;</span><span class="s1"> 
+<a name="l48"><span class="ln">48   </span></a> 
+<a name="l49"><span class="ln">49   </span></a>    @Override 
+<a name="l50"><span class="ln">50   </span></a>    </span><span class="s0">public void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+<a name="l51"><span class="ln">51   </span></a>        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span><span class="s0">;</span><span class="s1"> 
+<a name="l52"><span class="ln">52   </span></a>        setContentView(R.layout.activity_login)</span><span class="s0">;</span><span class="s1"> 
+<a name="l53"><span class="ln">53   </span></a>        ButterKnife.bind(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l54"><span class="ln">54   </span></a>        UtilLocation ul = </span><span class="s0">new </span><span class="s1">UtilLocation(</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l55"><span class="ln">55   </span></a>        String networkInfo= </span><span class="s0">null;</span><span class="s1"> 
+<a name="l56"><span class="ln">56   </span></a>        </span><span class="s0">try </span><span class="s1">{ 
+<a name="l57"><span class="ln">57   </span></a>            networkInfo = ul.getNWInfo(</span><span class="s3">&quot;/&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l58"><span class="ln">58   </span></a>        } </span><span class="s0">catch </span><span class="s1">(Throwable throwable) { 
+<a name="l59"><span class="ln">59   </span></a>            throwable.printStackTrace()</span><span class="s0">;</span><span class="s1"> 
+<a name="l60"><span class="ln">60   </span></a>        } 
+<a name="l61"><span class="ln">61   </span></a>        String[] network = {}</span><span class="s0">;</span><span class="s1"> 
+<a name="l62"><span class="ln">62   </span></a>        </span><span class="s0">if</span><span class="s1">(networkInfo==</span><span class="s0">null</span><span class="s1">){ 
+<a name="l63"><span class="ln">63   </span></a>            Log.d(</span><span class="s3">&quot;NETWORK INFO:&quot;</span><span class="s0">, </span><span class="s3">&quot;ERROR&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l64"><span class="ln">64   </span></a>        }</span><span class="s0">else </span><span class="s1">{ 
+<a name="l65"><span class="ln">65   </span></a>            Log.d(</span><span class="s3">&quot;NETWORK INFO:&quot;</span><span class="s0">, </span><span class="s1">networkInfo)</span><span class="s0">;</span><span class="s1"> 
+<a name="l66"><span class="ln">66   </span></a>            network = networkInfo.split(</span><span class="s3">&quot;/&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l67"><span class="ln">67   </span></a>        } 
+<a name="l68"><span class="ln">68   </span></a>        </span><span class="s0">final </span><span class="s1">String[] finalNetwork = network</span><span class="s0">;</span><span class="s1"> 
+<a name="l69"><span class="ln">69   </span></a>        _loginButton.setOnClickListener(</span><span class="s0">new </span><span class="s1">View.OnClickListener() { 
+<a name="l70"><span class="ln">70   </span></a>            @Override 
+<a name="l71"><span class="ln">71   </span></a>            </span><span class="s0">public void </span><span class="s1">onClick(View v) { 
+<a name="l72"><span class="ln">72   </span></a>                ReadDataTask m = (ReadDataTask) </span><span class="s0">new </span><span class="s1">ReadDataTask(finalNetwork).execute()</span><span class="s0">;</span><span class="s1"> 
+<a name="l73"><span class="ln">73   </span></a>            } 
+<a name="l74"><span class="ln">74   </span></a>        })</span><span class="s0">;</span><span class="s1"> 
+<a name="l75"><span class="ln">75   </span></a>        runOnUiThread(</span><span class="s0">new </span><span class="s1">Runnable() { 
+<a name="l76"><span class="ln">76   </span></a>            @Override 
+<a name="l77"><span class="ln">77   </span></a>            </span><span class="s0">public void </span><span class="s1">run() { 
+<a name="l78"><span class="ln">78   </span></a>                MyFirebaseInstanceIDService mfs= </span><span class="s0">new </span><span class="s1">MyFirebaseInstanceIDService(Signin.</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l79"><span class="ln">79   </span></a>                mfs.onTokenRefresh()</span><span class="s0">;</span><span class="s1"> 
+<a name="l80"><span class="ln">80   </span></a>                </span><span class="s4">//String [] allDevice=config.getDevice();</span><span class="s1"> 
+<a name="l81"><span class="ln">81   </span></a>            } 
+<a name="l82"><span class="ln">82   </span></a>        })</span><span class="s0">;</span><span class="s1"> 
+<a name="l83"><span class="ln">83   </span></a>    } 
+<a name="l84"><span class="ln">84   </span></a> 
+<a name="l85"><span class="ln">85   </span></a>    </span><span class="s0">class </span><span class="s1">ReadDataTask </span><span class="s0">extends </span><span class="s1">AsyncTask&lt;String</span><span class="s0">, </span><span class="s1">Void</span><span class="s0">, </span><span class="s1">String&gt; { 
+<a name="l86"><span class="ln">86   </span></a>        ProgressDialog pDialog</span><span class="s0">;</span><span class="s1"> 
+<a name="l87"><span class="ln">87   </span></a>        String[] network</span><span class="s0">;</span><span class="s1"> 
+<a name="l88"><span class="ln">88   </span></a>        </span><span class="s0">public </span><span class="s1">ReadDataTask(String[] network) { 
+<a name="l89"><span class="ln">89   </span></a>            </span><span class="s0">this</span><span class="s1">.network=network</span><span class="s0">;</span><span class="s1"> 
+<a name="l90"><span class="ln">90   </span></a>        } 
+<a name="l91"><span class="ln">91   </span></a> 
+<a name="l92"><span class="ln">92   </span></a>        @Override 
+<a name="l93"><span class="ln">93   </span></a>        </span><span class="s0">protected void </span><span class="s1">onPreExecute() { 
+<a name="l94"><span class="ln">94   </span></a>            </span><span class="s0">super</span><span class="s1">.onPreExecute()</span><span class="s0">;</span><span class="s1"> 
+<a name="l95"><span class="ln">95   </span></a>            pDialog = </span><span class="s0">new </span><span class="s1">ProgressDialog(Signin.</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l96"><span class="ln">96   </span></a>            pDialog.setMessage(</span><span class="s3">&quot;Mohon Tunggu..&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l97"><span class="ln">97   </span></a>            pDialog.setIndeterminate(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l98"><span class="ln">98   </span></a>            pDialog.setCancelable(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l99"><span class="ln">99   </span></a>            pDialog.show()</span><span class="s0">;</span><span class="s1"> 
+<a name="l100"><span class="ln">100  </span></a>        } 
+<a name="l101"><span class="ln">101  </span></a>        @Override 
+<a name="l102"><span class="ln">102  </span></a>        </span><span class="s0">protected </span><span class="s1">String doInBackground(String... sText) { 
+<a name="l103"><span class="ln">103  </span></a>            String returnResult = </span><span class="s0">null;</span><span class="s1"> 
+<a name="l104"><span class="ln">104  </span></a>            </span><span class="s0">try </span><span class="s1">{ 
+<a name="l105"><span class="ln">105  </span></a>                returnResult = login(network)</span><span class="s0">;</span><span class="s1"> 
+<a name="l106"><span class="ln">106  </span></a>            } </span><span class="s0">catch </span><span class="s1">(Throwable throwable) { 
+<a name="l107"><span class="ln">107  </span></a>                throwable.printStackTrace()</span><span class="s0">;</span><span class="s1"> 
+<a name="l108"><span class="ln">108  </span></a>            } 
+<a name="l109"><span class="ln">109  </span></a>            </span><span class="s0">return </span><span class="s1">returnResult</span><span class="s0">;</span><span class="s1"> 
+<a name="l110"><span class="ln">110  </span></a>        } 
+<a name="l111"><span class="ln">111  </span></a>        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1) 
+<a name="l112"><span class="ln">112  </span></a>        @Override 
+<a name="l113"><span class="ln">113  </span></a>        </span><span class="s0">protected void </span><span class="s1">onPostExecute(String result) { 
+<a name="l114"><span class="ln">114  </span></a>            </span><span class="s0">super</span><span class="s1">.onPostExecute(result)</span><span class="s0">;</span><span class="s1"> 
+<a name="l115"><span class="ln">115  </span></a>            pDialog.dismiss()</span><span class="s0">;</span><span class="s1"> 
+<a name="l116"><span class="ln">116  </span></a>            ScrollView sv =(ScrollView) findViewById(R.id.sv_login)</span><span class="s0">;</span><span class="s1"> 
+<a name="l117"><span class="ln">117  </span></a>            </span><span class="s0">if </span><span class="s1">(result.equalsIgnoreCase(</span><span class="s3">&quot;Exception Caught&quot;</span><span class="s1">)) { 
+<a name="l118"><span class="ln">118  </span></a>                </span><span class="s4">//Toast.makeText(Signin.this, &quot;Unable to connect to server,please check your internet connection!&quot;, Toast.LENGTH_LONG).show();</span><span class="s1"> 
+<a name="l119"><span class="ln">119  </span></a>                _loginButton.setEnabled(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l120"><span class="ln">120  </span></a>                Snackbar snackbar = Snackbar.make(sv</span><span class="s0">, </span><span class="s3">&quot;Login gagal, cek koneksi internet&quot;</span><span class="s0">, </span><span class="s1">Snackbar.LENGTH_LONG)</span><span class="s0">;</span><span class="s1"> 
+<a name="l121"><span class="ln">121  </span></a>                snackbar.show()</span><span class="s0">;</span><span class="s1"> 
+<a name="l122"><span class="ln">122  </span></a>                </span><span class="s4">//reload(&quot;Users&quot;);</span><span class="s1"> 
+<a name="l123"><span class="ln">123  </span></a>            } 
+<a name="l124"><span class="ln">124  </span></a>            </span><span class="s0">if </span><span class="s1">(result.equalsIgnoreCase(</span><span class="s3">&quot;no results&quot;</span><span class="s1">)) { 
+<a name="l125"><span class="ln">125  </span></a>                </span><span class="s4">//Toast.makeText(Signin.this, &quot;Data empty&quot;, Toast.LENGTH_LONG).show();</span><span class="s1"> 
+<a name="l126"><span class="ln">126  </span></a>                _loginButton.setEnabled(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l127"><span class="ln">127  </span></a>                Snackbar snackbar = Snackbar.make(sv</span><span class="s0">, </span><span class="s3">&quot;Login gagal, cek koneksi internet&quot;</span><span class="s0">, </span><span class="s1">Snackbar.LENGTH_LONG)</span><span class="s0">;</span><span class="s1"> 
+<a name="l128"><span class="ln">128  </span></a>                snackbar.show()</span><span class="s0">;</span><span class="s1"> 
+<a name="l129"><span class="ln">129  </span></a>                </span><span class="s4">//reload(&quot;Users&quot;);</span><span class="s1"> 
+<a name="l130"><span class="ln">130  </span></a> 
+<a name="l131"><span class="ln">131  </span></a>            } </span><span class="s0">else </span><span class="s1">{ 
+<a name="l132"><span class="ln">132  </span></a>                </span><span class="s4">//_loginButton.setEnabled(false);</span><span class="s1"> 
+<a name="l133"><span class="ln">133  </span></a>                </span><span class="s0">try </span><span class="s1">{ 
+<a name="l134"><span class="ln">134  </span></a>                    JSONObject resLogin = </span><span class="s0">new </span><span class="s1">JSONObject(result)</span><span class="s0">;</span><span class="s1"> 
+<a name="l135"><span class="ln">135  </span></a>                    </span><span class="s0">int </span><span class="s1">success = resLogin.getInt(</span><span class="s3">&quot;success&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l136"><span class="ln">136  </span></a>                    </span><span class="s0">if </span><span class="s1">(success == </span><span class="s5">1</span><span class="s1">) { 
+<a name="l137"><span class="ln">137  </span></a>                        </span><span class="s4">//final Basic config=new Basic();</span><span class="s1"> 
+<a name="l138"><span class="ln">138  </span></a>                        String ver =config.getVer()</span><span class="s0">;</span><span class="s1"> 
+<a name="l139"><span class="ln">139  </span></a>                        String data = resLogin.getString(</span><span class="s3">&quot;data&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l140"><span class="ln">140  </span></a>                        JSONObject jsonObj = </span><span class="s0">new </span><span class="s1">JSONObject(data)</span><span class="s0">;</span><span class="s1"> 
+<a name="l141"><span class="ln">141  </span></a>                        JSONArray data_profile = jsonObj.getJSONArray(</span><span class="s3">&quot;version&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l142"><span class="ln">142  </span></a>                        </span><span class="s0">final </span><span class="s1">JSONObject b = data_profile.getJSONObject(</span><span class="s5">0</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l143"><span class="ln">143  </span></a>                        Log.d(</span><span class="s3">&quot;device version&quot;</span><span class="s0">, </span><span class="s1">ver+</span><span class="s3">&quot;/&quot;</span><span class="s1">+b.getString(</span><span class="s3">&quot;param1&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+<a name="l144"><span class="ln">144  </span></a>                        </span><span class="s0">if</span><span class="s1">(ver.equals(b.getString(</span><span class="s3">&quot;param1&quot;</span><span class="s1">))){ 
+<a name="l145"><span class="ln">145  </span></a>                        </span><span class="s4">//if(ver.equals(&quot;1.0.1&quot;)){</span><span class="s1"> 
+<a name="l146"><span class="ln">146  </span></a>                            Log.d(</span><span class="s3">&quot;data session&quot;</span><span class="s0">, </span><span class="s1">data)</span><span class="s0">;</span><span class="s1"> 
+<a name="l147"><span class="ln">147  </span></a>                            Intent intentB = </span><span class="s0">new </span><span class="s1">Intent(Signin.</span><span class="s0">this, </span><span class="s1">Barlay.</span><span class="s0">class</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l148"><span class="ln">148  </span></a>                            intentB.putExtra(</span><span class="s3">&quot;isi&quot;</span><span class="s0">, </span><span class="s3">&quot;Sukses Login&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l149"><span class="ln">149  </span></a>                            intentB.putExtra(</span><span class="s3">&quot;data&quot;</span><span class="s0">, </span><span class="s1">data)</span><span class="s0">;</span><span class="s1"> 
+<a name="l150"><span class="ln">150  </span></a>                            </span><span class="s4">//global variable</span><span class="s1"> 
+<a name="l151"><span class="ln">151  </span></a>                            Session session = </span><span class="s0">new </span><span class="s1">Session(getApplicationContext())</span><span class="s0">;</span><span class="s1"> 
+<a name="l152"><span class="ln">152  </span></a>                            session.setdata(data)</span><span class="s0">;</span><span class="s1"> 
+<a name="l153"><span class="ln">153  </span></a>                            startActivity(intentB)</span><span class="s0">;</span><span class="s1"> 
+<a name="l154"><span class="ln">154  </span></a>                            _loginButton.setEnabled(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l155"><span class="ln">155  </span></a> 
+<a name="l156"><span class="ln">156  </span></a>                        }</span><span class="s0">else </span><span class="s1">{ 
+<a name="l157"><span class="ln">157  </span></a>                            AlertDialog.Builder builder = </span><span class="s0">new </span><span class="s1">AlertDialog.Builder(Signin.</span><span class="s0">this, </span><span class="s1">android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth)</span><span class="s0">;</span><span class="s1"> 
+<a name="l158"><span class="ln">158  </span></a>                            builder.setTitle(</span><span class="s3">&quot;Info Update&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l159"><span class="ln">159  </span></a>                            builder.setMessage(</span><span class="s3">&quot;Version:&quot;</span><span class="s1">+b.getString(</span><span class="s3">&quot;param1&quot;</span><span class="s1">)+</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Info: &quot;</span><span class="s1">+b.getString(</span><span class="s3">&quot;info&quot;</span><span class="s1">)) 
+<a name="l160"><span class="ln">160  </span></a>                                    .setCancelable(</span><span class="s0">false</span><span class="s1">) 
+<a name="l161"><span class="ln">161  </span></a>                                    .setPositiveButton(</span><span class="s3">&quot;UPDATE&quot;</span><span class="s0">, new</span><span class="s1"> 
+<a name="l162"><span class="ln">162  </span></a>                                            DialogInterface.OnClickListener() { 
+<a name="l163"><span class="ln">163  </span></a>                                                </span><span class="s0">public void </span><span class="s1">onClick(DialogInterface dialog</span><span class="s0">, int </span><span class="s1">id) { 
+<a name="l164"><span class="ln">164  </span></a>                                                    </span><span class="s4">//android.os.Process.killProcess(android.os.Process.myPid());</span><span class="s1"> 
+<a name="l165"><span class="ln">165  </span></a>                                                    ProgressDialog mProgressDialog</span><span class="s0">;</span><span class="s1"> 
+<a name="l166"><span class="ln">166  </span></a>                                                    mProgressDialog = </span><span class="s0">new </span><span class="s1">ProgressDialog(Signin.</span><span class="s0">this</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l167"><span class="ln">167  </span></a>                                                    mProgressDialog.setMessage(</span><span class="s3">&quot;Download on progress...&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l168"><span class="ln">168  </span></a>                                                    mProgressDialog.setIndeterminate(</span><span class="s0">false</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l169"><span class="ln">169  </span></a>                                                    mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)</span><span class="s0">;</span><span class="s1"> 
+<a name="l170"><span class="ln">170  </span></a>                                                    mProgressDialog.setProgressNumberFormat(</span><span class="s0">null</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l171"><span class="ln">171  </span></a>                                                    UpdateApp atualizaApp = </span><span class="s0">new </span><span class="s1">UpdateApp(mProgressDialog)</span><span class="s0">;</span><span class="s1"> 
+<a name="l172"><span class="ln">172  </span></a>                                                    atualizaApp.setContext(getApplicationContext())</span><span class="s0">;</span><span class="s1"> 
+<a name="l173"><span class="ln">173  </span></a>                                                    </span><span class="s0">try </span><span class="s1">{ 
+<a name="l174"><span class="ln">174  </span></a>                                                        atualizaApp.execute(b.getString(</span><span class="s3">&quot;param2&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+<a name="l175"><span class="ln">175  </span></a>                                                    } </span><span class="s0">catch </span><span class="s1">(JSONException e) { 
+<a name="l176"><span class="ln">176  </span></a>                                                        e.printStackTrace()</span><span class="s0">;</span><span class="s1"> 
+<a name="l177"><span class="ln">177  </span></a>                                                        android.os.Process.killProcess(android.os.Process.myPid())</span><span class="s0">;</span><span class="s1"> 
+<a name="l178"><span class="ln">178  </span></a>                                                    } 
+<a name="l179"><span class="ln">179  </span></a>                                                } 
+<a name="l180"><span class="ln">180  </span></a>                                            })</span><span class="s0">;</span><span class="s1"> 
+<a name="l181"><span class="ln">181  </span></a>                            AlertDialog a=builder.create()</span><span class="s0">;</span><span class="s1"> 
+<a name="l182"><span class="ln">182  </span></a>                            a.show()</span><span class="s0">;</span><span class="s1"> 
+<a name="l183"><span class="ln">183  </span></a>                            Button bq = a.getButton(DialogInterface.BUTTON_POSITIVE)</span><span class="s0">;</span><span class="s1"> 
+<a name="l184"><span class="ln">184  </span></a>                            bq.setBackgroundColor(Color.BLACK)</span><span class="s0">;</span><span class="s1"> 
+<a name="l185"><span class="ln">185  </span></a>                            bq.setTextColor(Color.WHITE)</span><span class="s0">;</span><span class="s1"> 
+<a name="l186"><span class="ln">186  </span></a>                        } 
+<a name="l187"><span class="ln">187  </span></a>                    }</span><span class="s0">else</span><span class="s1">{ 
+<a name="l188"><span class="ln">188  </span></a>                        </span><span class="s4">//Toast.makeText(getBaseContext(), &quot;Login failed&quot;, Toast.LENGTH_LONG).show();</span><span class="s1"> 
+<a name="l189"><span class="ln">189  </span></a>                        _loginButton.setEnabled(</span><span class="s0">true</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l190"><span class="ln">190  </span></a>                        Snackbar snackbar = Snackbar.make(sv</span><span class="s0">, </span><span class="s3">&quot;Login gagal, user atau password salah&quot;</span><span class="s0">, </span><span class="s1">Snackbar.LENGTH_LONG)</span><span class="s0">;</span><span class="s1"> 
+<a name="l191"><span class="ln">191  </span></a>                        snackbar.show()</span><span class="s0">;</span><span class="s1"> 
+<a name="l192"><span class="ln">192  </span></a>                    } 
+<a name="l193"><span class="ln">193  </span></a> 
+<a name="l194"><span class="ln">194  </span></a>                } </span><span class="s0">catch </span><span class="s1">(JSONException e) { 
+<a name="l195"><span class="ln">195  </span></a>                    e.printStackTrace()</span><span class="s0">;</span><span class="s1"> 
+<a name="l196"><span class="ln">196  </span></a>                } 
+<a name="l197"><span class="ln">197  </span></a> 
+<a name="l198"><span class="ln">198  </span></a>            } 
+<a name="l199"><span class="ln">199  </span></a>        } 
+<a name="l200"><span class="ln">200  </span></a>        </span><span class="s0">private </span><span class="s1">String login(String[] network) </span><span class="s0">throws </span><span class="s1">Throwable { 
+<a name="l201"><span class="ln">201  </span></a>            </span><span class="s4">//Basic config = new Basic();</span><span class="s1"> 
+<a name="l202"><span class="ln">202  </span></a>            </span><span class="s4">//global variable</span><span class="s1"> 
+<a name="l203"><span class="ln">203  </span></a>            Session session = </span><span class="s0">new </span><span class="s1">Session(getApplicationContext())</span><span class="s0">;</span><span class="s1"> 
+<a name="l204"><span class="ln">204  </span></a> 
+<a name="l205"><span class="ln">205  </span></a>            String allDevice=config.getDeviceInfo(</span><span class="s3">&quot;/&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l206"><span class="ln">206  </span></a>            Log.d(</span><span class="s3">&quot;DEVICE INFO:&quot;</span><span class="s0">,</span><span class="s1">allDevice)</span><span class="s0">;</span><span class="s1"> 
+<a name="l207"><span class="ln">207  </span></a>            String [] device =allDevice.split(</span><span class="s3">&quot;/&quot;</span><span class="s1">)</span><span class="s0">;</span><span class="s1"> 
+<a name="l208"><span class="ln">208  </span></a>            String token = session.getToken()</span><span class="s0">;</span><span class="s1"> 
+<a name="l209"><span class="ln">209  </span></a>            Log.d(</span><span class="s3">&quot;FBase token&quot;</span><span class="s0">, </span><span class="s1">token)</span><span class="s0">;</span><span class="s1"> 
+<a name="l210"><span class="ln">210  </span></a> 
+<a name="l211"><span class="ln">211  </span></a>            String url = config.getLogin()</span><span class="s0">;</span><span class="s1"> 
+<a name="l212"><span class="ln">212  </span></a>            JSONParser jParser = </span><span class="s0">new </span><span class="s1">JSONParser()</span><span class="s0">;</span><span class="s1"> 
+<a name="l213"><span class="ln">213  </span></a>            String email = _emailText.getText().toString()</span><span class="s0">;</span><span class="s1"> 
+<a name="l214"><span class="ln">214  </span></a>            String password = _passwordText.getText().toString()</span><span class="s0">;</span><span class="s1"> 
+<a name="l215"><span class="ln">215  </span></a>            List&lt;NameValuePair&gt; parameter = </span><span class="s0">new </span><span class="s1">ArrayList&lt;NameValuePair&gt;()</span><span class="s0">;</span><span class="s1"> 
+<a name="l216"><span class="ln">216  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;un&quot;</span><span class="s0">, </span><span class="s1">email))</span><span class="s0">;</span><span class="s1"> 
+<a name="l217"><span class="ln">217  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;pass&quot;</span><span class="s0">, </span><span class="s1">password))</span><span class="s0">;</span><span class="s1"> 
+<a name="l218"><span class="ln">218  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;token&quot;</span><span class="s0">, </span><span class="s1">token))</span><span class="s0">;</span><span class="s1"> 
+<a name="l219"><span class="ln">219  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;device_id&quot;</span><span class="s0">, </span><span class="s1">device[</span><span class="s5">12</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+<a name="l220"><span class="ln">220  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;brand&quot;</span><span class="s0">, </span><span class="s1">device[</span><span class="s5">1</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+<a name="l221"><span class="ln">221  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;operator&quot;</span><span class="s0">, </span><span class="s1">network[</span><span class="s5">2</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+<a name="l222"><span class="ln">222  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;mcc&quot;</span><span class="s0">, </span><span class="s1">network[</span><span class="s5">3</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+<a name="l223"><span class="ln">223  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;mnc&quot;</span><span class="s0">, </span><span class="s1">network[</span><span class="s5">4</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+<a name="l224"><span class="ln">224  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;lac&quot;</span><span class="s0">, </span><span class="s1">network[</span><span class="s5">0</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+<a name="l225"><span class="ln">225  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;cid&quot;</span><span class="s0">, </span><span class="s1">network[</span><span class="s5">1</span><span class="s1">]))</span><span class="s0">;</span><span class="s1"> 
+<a name="l226"><span class="ln">226  </span></a>            parameter.add(</span><span class="s0">new </span><span class="s1">BasicNameValuePair(</span><span class="s3">&quot;address&quot;</span><span class="s0">,</span><span class="s3">&quot;&quot;</span><span class="s1">))</span><span class="s0">;</span><span class="s1"> 
+<a name="l227"><span class="ln">227  </span></a>                    Log.d(</span><span class="s3">&quot;URL SIGNIN&quot;</span><span class="s0">, </span><span class="s1">url)</span><span class="s0">;</span><span class="s1"> 
+<a name="l228"><span class="ln">228  </span></a>            JSONObject json = jParser.makeHttpRequest(url</span><span class="s0">, </span><span class="s3">&quot;POST&quot;</span><span class="s0">, </span><span class="s1">parameter)</span><span class="s0">;</span><span class="s1"> 
+<a name="l229"><span class="ln">229  </span></a>            </span><span class="s0">if</span><span class="s1">(String.valueOf(json).equals(</span><span class="s3">&quot;null&quot;</span><span class="s1">)){ 
+<a name="l230"><span class="ln">230  </span></a>                </span><span class="s0">return </span><span class="s3">&quot;Exception Caught&quot;</span><span class="s0">;</span><span class="s1"> 
+<a name="l231"><span class="ln">231  </span></a>            }</span><span class="s0">else </span><span class="s1">{ 
+<a name="l232"><span class="ln">232  </span></a>                Log.d(</span><span class="s3">&quot;RESULT DATA&quot;</span><span class="s0">, </span><span class="s1">String.valueOf(json))</span><span class="s0">;</span><span class="s1"> 
+<a name="l233"><span class="ln">233  </span></a>                </span><span class="s0">return </span><span class="s1">String.valueOf(json)</span><span class="s0">;</span><span class="s1"> 
+<a name="l234"><span class="ln">234  </span></a>            } 
+<a name="l235"><span class="ln">235  </span></a>        } 
+<a name="l236"><span class="ln">236  </span></a>    } 
+<a name="l237"><span class="ln">237  </span></a>} 
+<a name="l238"><span class="ln">238  </span></a></span></pre>
+</body>
+</html>

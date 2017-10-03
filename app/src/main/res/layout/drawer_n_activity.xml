@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/drawer_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_dark"
+        android:padding="10dp"
+        android:text="Material Design Navigation View"
+        android:textColor="#fff"
+        android:textSize="24sp"
+        android:layout_marginTop="175dp"
+        android:gravity="center_horizontal|center"/>
+
+
+
+</RelativeLayout>

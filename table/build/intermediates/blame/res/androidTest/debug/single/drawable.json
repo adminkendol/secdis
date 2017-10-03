@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\project\\build_android\\template sdk\\TableFixHeaders-master\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\shadow_left.xml",
+        "source": "D:\\project\\build_android\\template sdk\\TableFixHeaders-master\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\shadow_left.xml"
+    },
+    {
+        "merged": "D:\\project\\build_android\\template sdk\\TableFixHeaders-master\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\shadow_bottom.xml",
+        "source": "D:\\project\\build_android\\template sdk\\TableFixHeaders-master\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\shadow_bottom.xml"
+    },
+    {
+        "merged": "D:\\project\\build_android\\template sdk\\TableFixHeaders-master\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\shadow_right.xml",
+        "source": "D:\\project\\build_android\\template sdk\\TableFixHeaders-master\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\shadow_right.xml"
+    },
+    {
+        "merged": "D:\\project\\build_android\\template sdk\\TableFixHeaders-master\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\shadow_top.xml",
+        "source": "D:\\project\\build_android\\template sdk\\TableFixHeaders-master\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\shadow_top.xml"
+    }
+]

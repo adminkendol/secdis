@@ -1,0 +1,85 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="AppTheme.Dark" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+
+        <item name="android:windowBackground">@color/primary</item>
+
+        <!--<item name="colorControlNormal">@color/iron</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColorHint">@color/iron</item>
+
+        <item name="colorButtonNormal">@color/primary_darker</item>
+        <item name="android:colorButtonNormal">@color/primary_darker</item>-->
+    </style>
+    <style name="AppTheme.trang" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/accent_trank</item>
+        <item name="colorPrimaryDark">@color/primary_light</item>
+        <!--<item name="colorAccent">@color/accent_trank</item>-->
+        <item name="colorAccent">#ff7b0b</item>
+        <!--<item name="android:textColor">#1e1e1e</item>-->
+        <item name="android:textColor">#FFFFFFFF</item>
+
+        <item name="android:windowBackground">@color/primary_trank</item>
+
+    </style>
+    <style name="AppTheme.form" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary_trank</item>
+        <item name="colorPrimaryDark">@color/primary_light</item>
+        <!--<item name="colorAccent">@color/accent_trank</item>-->
+        <item name="colorAccent">#ff7b0b</item>
+        <!--<item name="android:textColor">#1e1e1e</item>-->
+        <item name="android:textColor">#FFFFFFFF</item>
+
+        <item name="android:windowBackground">@color/primary_trank</item>
+
+    </style>
+    <style name="AppTheme.prog" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/accent_trank</item>
+        <item name="colorPrimaryDark">@color/primary_light</item>
+        <item name="colorAccent">@color/accent_trank</item>
+        <item name="android:textColor">#1e1e1e</item>
+        <item name="android:windowBackground">@color/primary_trank</item>
+
+    </style>
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <!--<item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:background">@color/oil</item>-->
+    </style>
+    <style name="DialogTheme" parent="android:Theme.Dialog">
+
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+
+        <item name="android:windowContentOverlay">@drawable/abc_ratingbar_full_material</item>
+        <!-- No backgrounds, titles or window float -->
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/accent_trank</item>
+        <item name="colorPrimaryDark">@color/primary_light</item>
+        <item name="colorAccent">@color/accent_trank</item>
+        <item name="android:textColor">#1e1e1e</item>
+        <item name="android:windowBackground">@color/primary_trank</item>
+    </style>
+    <style name="AppTheme.notif">
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

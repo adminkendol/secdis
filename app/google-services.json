@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "842196445716",
+    "firebase_url": "https://cctvdispedalampung.firebaseio.com",
+    "project_id": "cctvdispedalampung",
+    "storage_bucket": "cctvdispedalampung.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842196445716:android:5996063a27aa3963",
+        "android_client_info": {
+          "package_name": "lampung.dispenda.cctv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842196445716-1nl68bq6tn3qq7gse31js55lutf7m6am.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPybfFRfV741-JhXu8Pb1FpMBvZrKnFpA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

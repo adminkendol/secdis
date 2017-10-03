@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="#aaaaaa">
+
+
+        <ProgressBar
+            android:id="@+id/progressBar_uiA"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="37dp"
+            android:layout_height="150dp"
+            android:max="100"
+            android:progress="0"
+            android:text="0%"
+            android:progressDrawable="@drawable/progress_drawable"
+            android:textAlignment="center"
+            android:layout_marginLeft="47dp"
+            android:layout_marginStart="47dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="47dp" />
+        <ProgressBar
+            android:id="@+id/progressBar_uiB"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="37dp"
+            android:layout_height="150dp"
+            android:max="100"
+            android:progress="0"
+            android:text="0%"
+            android:progressDrawable="@drawable/progress_drawable"
+            android:textAlignment="center"
+            android:layout_alignTop="@+id/progressBar_uiA"
+            android:layout_toRightOf="@+id/titleA"
+            android:layout_toEndOf="@+id/titleA"
+            android:layout_marginLeft="42dp"
+            android:layout_marginStart="42dp" />
+        <ProgressBar
+            android:id="@+id/progressBar_uiC"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="37dp"
+            android:layout_height="150dp"
+            android:max="100"
+            android:progress="0"
+            android:text="0%"
+            android:progressDrawable="@drawable/progress_drawable"
+            android:textAlignment="center"
+            android:layout_alignTop="@+id/progressBar_uiB"
+            android:layout_toRightOf="@+id/textBarB"
+            android:layout_toEndOf="@+id/textBarB"
+            android:layout_marginLeft="59dp"
+            android:layout_marginStart="59dp" />
+        <ProgressBar
+            android:id="@+id/progressBar_uiD"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="37dp"
+            android:layout_height="150dp"
+            android:max="100"
+            android:progress="0"
+            android:text="0%"
+            android:progressDrawable="@drawable/progress_drawable"
+            android:textAlignment="center"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="40dp"
+            android:layout_alignTop="@+id/progressBar_uiC"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Online"
+            android:id="@+id/titleA"
+            android:layout_above="@+id/progressBar_uiB"
+            android:layout_alignLeft="@+id/progressBar_uiA"
+            android:layout_alignStart="@+id/progressBar_uiA"
+            android:textColor="#fc111b21" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Offline"
+            android:id="@+id/titleB"
+            android:layout_alignTop="@+id/titleA"
+            android:layout_alignLeft="@+id/progressBar_uiB"
+            android:layout_alignStart="@+id/progressBar_uiB"
+            android:textColor="#fc111b21" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="RAM"
+            android:id="@+id/titleC"
+            android:layout_above="@+id/progressBar_uiC"
+            android:layout_alignLeft="@+id/progressBar_uiC"
+            android:layout_alignStart="@+id/progressBar_uiC"
+            android:textColor="#fc111b21" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Storage"
+            android:id="@+id/titleD"
+            android:layout_alignTop="@+id/titleC"
+            android:layout_alignLeft="@+id/progressBar_uiD"
+            android:layout_alignStart="@+id/progressBar_uiD"
+            android:textColor="#fc111b21" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0"
+            android:id="@+id/textBarA"
+            android:layout_marginTop="160dp"
+            android:textAlignment="center"
+            android:layout_alignTop="@+id/progressBar_uiA"
+            android:layout_alignRight="@+id/progressBar_uiA"
+            android:layout_alignEnd="@+id/titleA"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentBottom="false"
+            android:textColor="#1e1e1e"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0"
+            android:id="@+id/textBarB"
+            android:layout_alignTop="@+id/textBarA"
+            android:layout_alignRight="@+id/progressBar_uiB"
+            android:layout_alignEnd="@+id/progressBar_uiB"
+            android:textAlignment="center"
+            android:textColor="#1e1e1e"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0"
+            android:id="@+id/textBarC"
+            android:layout_alignTop="@+id/textBarA"
+            android:layout_alignRight="@+id/progressBar_uiC"
+            android:layout_alignEnd="@+id/progressBar_uiC"
+            android:textAlignment="center"
+            android:textColor="#1e1e1e"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0"
+            android:id="@+id/textBarD"
+            android:textAlignment="center"
+            android:textColor="#1e1e1e"
+            android:layout_alignTop="@+id/textBarA"
+            android:layout_alignRight="@+id/progressBar_uiD"
+            android:layout_alignEnd="@+id/progressBar_uiD"
+            android:layout_marginLeft="5dp" />
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout"></RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Server Info"
+        android:id="@+id/textView2"
+        android:textSize="22dp"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textColor="#1106ff"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:elevation="100dp"
+        card_view:cardBackgroundColor="@color/cardview_initial_background"
+        card_view:cardCornerRadius="8dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/info1"
+            android:textColor="#1e1e1e"
+            android:layout_gravity="center|left"
+            android:layout_below="@+id/textView2"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_alignStart="@+id/textView2" />
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

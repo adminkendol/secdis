@@ -1,0 +1,101 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+    <!-- Row 1 with single column -->
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="18dp" android:text="Row 1"  android:layout_span="4"
+            android:padding="18dip" android:background="@drawable/cellborder"
+            android:textColor="#000"/>
+        </LinearLayout>
+    </TableRow>
+
+    <!-- Row 2 with 3 columns -->
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <TextView
+            android:id="@+id/colNo" android:text="NO"
+            android:layout_weight="1" android:background="#dcdcdc"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"
+            android:layout_height="fill_parent"
+            android:layout_width="10dp" />
+        <TextView
+            android:id="@+id/colUsername" android:text="USER NAME"
+            android:layout_weight="1" android:background="#d3d3d3"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"/>
+        <TextView
+            android:id="@+id/colLocation" android:text="LOCATION"
+            android:layout_weight="1" android:background="#cac9c9"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"/>
+        <TextView
+            android:id="@+id/colAction" android:text=""
+            android:layout_weight="1" android:background="#d7d6d6"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"/>
+    </TableRow>
+
+    <!-- Row 3 with 2 columns -->
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/listdata"
+        android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/colGetNo" android:text=""
+            android:layout_weight="1" android:background="#b0b0b0"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/colGetUsername" android:text=""
+            android:layout_weight="1" android:background="#a09f9f"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"/>
+        <TextView
+            android:id="@+id/colGetLocation" android:text=""
+            android:layout_weight="1" android:background="#b0b0b0"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"/>
+        <TextView
+            android:id="@+id/ColGetAction" android:text=""
+            android:layout_weight="1" android:background="#bcbcbc"
+            android:textColor="#000000"
+            android:padding="20dip" android:gravity="center"/>
+    </TableRow>
+    <!--  Floating Action Button-->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/pencil" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:text="New Button"
+            android:id="@+id/button"
+            android:layout_column="0" />
+    </TableRow>
+</TableLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="primary">#32424e</color>
+  <color name="primary_trank">#d7d6d6</color>
+  <color name="primary_dark">#455A64</color>
+  <color name="primary_light">#CFD8DC</color>
+  <color name="accent">#9E9E9E</color>
+  <color name="accent_trank">#fc111b21</color>
+  <color name="primary_text">#212121</color>
+  <color name="secondary_text">#727272</color>
+  <color name="icons">#FFFFFF</color>
+  <color name="divider">#B6B6B6</color>
+  <color name="background_black">#000000</color>
+  <color name="bar_padding">#4c4c4c</color>
+  <color name="bar_off">#4c4c4c</color>
+  <color name="bar_red">#ff0000</color>
+  <color name="bar_green">#00ff00</color>
+  <color name="bar_dark_green">#6AA84F</color>
+  <color name="cardview_initial_background">#919191</color>
+</resources>
